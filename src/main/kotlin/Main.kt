@@ -13,8 +13,14 @@ fun main() {
     val k: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8)
     val samples = listOf(sample1, sample2, sample3, sample4, sample5, sample6, sample7, sample8)
 
-    withoutNormalization(k, false, samples, sample9, false)
-    withoutNormalization(k, true, samples, sample9, false)
+    test(k, false, samples, sample9, false)
+    test(k, true, samples, sample9, false)
+
+    test(k, false, samples, sample9, false, linarNormalization = true)
+    test(k, true, samples, sample9, false, linarNormalization = true)
+
+    test(k, false, samples, sample9, false, zScoreNormalization = true)
+    test(k, true, samples, sample9, false, zScoreNormalization = true)
 
 }
 
